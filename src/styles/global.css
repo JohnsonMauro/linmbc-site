@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+/*
+ * One dark theme, on purpose: the app's screenshots are Breeze Dark and the
+ * audience is playing games. Colors come from the logo (src: the app's
+ * icons/linmbc.svg): KDE blue tile, yellow arrows.
+ */
+@theme {
+  --color-night: #070b14;
+  --color-surface: #0c1322;
+  --color-surface-raised: #121b2e;
+  --color-line: #1f2a40;
+  --color-ink: #e8edf6;
+  --color-ink-muted: #9aa6bd;
+  --color-ink-faint: #6b7891;
+
+  --color-blue: #3daee9;
+  --color-blue-deep: #1b5fa8;
+  --color-gold: #ffd34e;
+
+  --color-ok: #4ade80;
+  --color-warn: #ffd34e;
+  --color-idle: #9aa6bd;
+  --color-no: #f87171;
+
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: Manrope, Inter, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container-page: 1180px;
+
+  --animate-rise: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Outside @theme: tailwind-csstree cannot parse @keyframes nested in it. */
+@keyframes rise {
+  0% {
+    transform: translateY(18px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+::selection {
+  @apply bg-gold text-night;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* eslint-disable css/no-important -- the preference must beat animation
+     delays set by utility classes. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  /* eslint-enable css/no-important */
+}

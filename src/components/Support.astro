@@ -1,0 +1,33 @@
+---
+import type { Dict, SupportRow } from '../i18n/dict';
+
+interface Props {
+  dict: Dict;
+}
+
+const { dict } = Astro.props;
+
+const DOT: Record<SupportRow['level'], string> = {
+  tested: 'bg-ok',
+  limited: 'bg-warn',
+  untested: 'bg-idle',
+  unsupported: 'bg-no',
+};
+---
+
+<section class="mx-auto max-w-page px-4 pb-24 sm:px-6" aria-labelledby="support-title">
+  <h2 id="support-title" class="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
+    {dict.support.title}
+  </h2>
+  <dl class="mt-8 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-surface">
+    {dict.support.rows.map((row) => (
+      <div class="grid gap-1 px-6 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
+        <dt class="flex items-center gap-2.5 font-semibold">
+          <span class:list={['size-2.5 rounded-full', DOT[row.level]]} aria-hidden="true" />
+          {row.label}
+        </dt>
+        <dd class="text-ink-muted">{row.body}</dd>
+      </div>
+    ))}
+  </dl>
+</section>

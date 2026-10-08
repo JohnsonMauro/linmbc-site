@@ -1,0 +1,63 @@
+---
+import type { Dict } from '../i18n/dict';
+import { README_URL } from '../lib/links';
+import CodeBlock from './CodeBlock.astro';
+
+interface Props {
+  dict: Dict;
+}
+
+const { dict } = Astro.props;
+const { install } = dict;
+---
+
+<section id="install" class="mx-auto max-w-page px-4 py-24 sm:px-6" aria-labelledby="install-title">
+  <h2 id="install-title" class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+    {install.title}
+  </h2>
+
+  <div class="mt-12 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-2">
+    <div>
+      <h3 class="flex items-baseline gap-3 font-display text-xl font-bold">
+        <span class="font-mono text-sm text-gold">1</span>
+        {install.archTitle}
+      </h3>
+      <p class="mt-2 text-ink-muted">{install.archBody}</p>
+      <div class="mt-5">
+        <CodeBlock
+          lines={[
+            'git clone https://github.com/JohnsonMauro/linmbc.git',
+            'cd linmbc/packaging/arch',
+            'makepkg -si',
+          ]}
+          copy={install.copy}
+          copied={install.copied}
+        />
+      </div>
+    </div>
+    <div>
+      <h3 class="flex items-baseline gap-3 font-display text-xl font-bold">
+        <span class="font-mono text-sm text-gold">2</span>
+        {install.enableTitle}
+      </h3>
+      <p class="mt-2 text-ink-muted">{install.enableBody}</p>
+      <div class="mt-5">
+        <CodeBlock
+          lines={['systemctl --user enable --now linmbc.service']}
+          copy={install.copy}
+          copied={install.copied}
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-10 rounded-2xl border border-dashed border-line p-6">
+    <h3 class="font-display text-lg font-bold">{install.otherTitle}</h3>
+    <p class="mt-2 text-ink-muted">
+      {install.otherBody}{' '}
+      <a href={README_URL} class="text-blue underline-offset-4 hover:underline">
+        README
+      </a>
+    </p>
+  </div>
+</section>

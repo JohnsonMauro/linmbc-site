@@ -1,0 +1,49 @@
+---
+import type { Dict } from '../i18n/dict';
+
+interface Props {
+  dict: Dict;
+}
+
+const { dict } = Astro.props;
+---
+
+<section class="border-y border-line bg-surface/60" aria-labelledby="how-title">
+  <div class="mx-auto max-w-page px-4 py-24 sm:px-6">
+    <h2 id="how-title" class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+      {dict.how.title}
+    </h2>
+    <p class="mt-4 max-w-2xl text-lg text-ink-muted">{dict.how.intro}</p>
+
+    {/* Data flow, read left to right; the labels are component names, not copy. */}
+    <div
+      class="mt-12 grid items-center gap-3 font-mono text-sm sm:grid-cols-[1fr_auto_1.4fr_auto_1fr_auto_1fr]"
+      aria-hidden="true"
+    >
+      <div class="rounded-xl border border-line bg-night px-4 py-3 text-center">mouse</div>
+      <span class="text-center text-ink-faint">→</span>
+      <div class="relative rounded-xl border border-blue/60 bg-blue/10 px-4 py-3 text-center text-blue">
+        linmbc-daemon
+        <span class="absolute -top-9 left-1/2 -translate-x-1/2 rounded-md border border-gold/40 bg-gold/10 px-2 py-0.5 text-xs whitespace-nowrap text-gold">
+          KWin → steam_app_899770
+        </span>
+      </div>
+      <span class="text-center text-ink-faint">→</span>
+      <div class="rounded-xl border border-line bg-night px-4 py-3 text-center">uinput</div>
+      <span class="text-center text-ink-faint">→</span>
+      <div class="rounded-xl border border-line bg-night px-4 py-3 text-center">game</div>
+    </div>
+
+    <ol class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {dict.how.steps.map((step, index) => (
+        <li>
+          <span class="font-mono text-sm text-gold [font-variant-ligatures:none]">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <h3 class="mt-2 font-display text-lg font-bold">{step.title}</h3>
+          <p class="mt-2 leading-relaxed text-ink-muted">{step.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

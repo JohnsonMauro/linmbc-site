@@ -1,0 +1,108 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { LOCALES, LOCALE_NAMES, LOCALE_FLAGS, type Locale } from '../i18n/config';
+import type { Dict } from '../i18n/dict';
+import { asset } from '../lib/asset';
+import { REPO_URL } from '../lib/links';
+
+interface Props {
+  lang: Locale;
+  dict: Dict;
+}
+
+const { lang, dict } = Astro.props;
+---
+
+<a
+  href="#main"
+  class="sr-only z-50 rounded-md bg-gold px-4 py-2 font-semibold text-night focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+>
+  {dict.nav.skipToContent}
+</a>
+<header class="sticky top-0 z-40 border-b border-line/70 bg-night/80 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-page items-center gap-6 px-4 sm:px-6">
+    <a
+      href={getRelativeLocaleUrl(lang, '')}
+      class="flex items-center gap-2.5 rounded-md font-display text-lg font-extrabold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+    >
+      <img src={asset('img/logo.svg')} alt="" width="32" height="32" class="size-8" />
+      LinMBC
+    </a>
+    <nav
+      aria-label="LinMBC"
+      class="ml-auto hidden items-center gap-6 text-sm text-ink-muted md:flex"
+    >
+      <a href="#features" class="transition-colors hover:text-ink">
+        {dict.nav.features}
+      </a>
+      <a href="#install" class="transition-colors hover:text-ink">
+        {dict.nav.install}
+      </a>
+      <a href={REPO_URL} class="transition-colors hover:text-ink">
+        {dict.nav.source}
+      </a>
+    </nav>
+    <details class="group relative ml-auto md:ml-0">
+      <summary class="flex cursor-pointer list-none items-center gap-2 rounded-md border border-line px-3 py-1.5 text-sm text-ink-muted transition-colors select-none hover:border-ink-faint hover:text-ink focus-visible:outline-2 focus-visible:outline-gold [&::-webkit-details-marker]:hidden">
+        <span class="sr-only">{dict.nav.languageLabel}:</span>
+        <img
+          src={asset(LOCALE_FLAGS[lang])}
+          alt=""
+          width="20"
+          height="15"
+          class="h-3.5 w-5 rounded-[2px] object-cover"
+        />
+        {LOCALE_NAMES[lang]}
+        <svg
+          viewBox="0 0 16 16"
+          class="size-3 transition-transform group-open:rotate-180"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 6l5 5 5-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </summary>
+      <ul class="absolute right-0 mt-2 w-56 overflow-hidden rounded-lg border border-line bg-surface-raised py-1 shadow-2xl shadow-black/50">
+        {LOCALES.map((loc) => (
+          <li>
+            <a
+              href={getRelativeLocaleUrl(loc, '')}
+              hreflang={loc}
+              aria-current={loc === lang ? 'page' : undefined}
+              data-locale={loc}
+              class="flex items-center gap-3 px-3 py-2 text-sm text-ink-muted hover:bg-line/60 hover:text-ink aria-[current=page]:text-gold"
+            >
+              <img
+                src={asset(LOCALE_FLAGS[loc])}
+                alt=""
+                width="20"
+                height="15"
+                class="h-3.5 w-5 rounded-[2px] object-cover"
+              />
+              {LOCALE_NAMES[loc]}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+</header>
+
+<script>
+  import { LOCALE_STORAGE_KEY } from '../lib/storage-keys';
+
+  for (const link of document.querySelectorAll<HTMLAnchorElement>('a[data-locale]')) {
+    link.addEventListener('click', () => {
+      try {
+        localStorage.setItem(LOCALE_STORAGE_KEY, link.dataset.locale ?? '');
+      } catch {
+        /* storage unavailable: the redirect falls back to the browser language */
+      }
+    });
+  }
+</script>

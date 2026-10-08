@@ -1,0 +1,57 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { LOCALES, DEFAULT_LOCALE } from '../i18n/config';
+import { LOCALE_STORAGE_KEY } from '../lib/storage-keys';
+
+const defaultTarget = getRelativeLocaleUrl(DEFAULT_LOCALE, '');
+const localeMap = Object.fromEntries(
+  LOCALES.map((l) => [l, getRelativeLocaleUrl(l, '')]),
+) as Record<string, string>;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${defaultTarget}`} />
+    <link rel="canonical" href={defaultTarget} />
+    <title>LinMBC</title>
+    {/* Saved choice first, then the browser languages (exact tag, then its base language). */}
+    <script
+      is:inline
+      define:vars={{ defaultTarget, localeMap, localeStorageKey: LOCALE_STORAGE_KEY }}
+    >
+      (function () {
+        let chosen = defaultTarget;
+        try {
+          const saved = window.localStorage && window.localStorage.getItem(localeStorageKey);
+          if (saved && localeMap[saved]) {
+            chosen = localeMap[saved];
+          } else {
+            const prefs = navigator.languages || [navigator.language || ''];
+            outer: for (const pref of prefs) {
+              const tag = String(pref).toLowerCase();
+              const bases = [tag, tag.split('-')[0]];
+              for (const candidate of bases) {
+                for (const code in localeMap) {
+                  if (code === candidate || code.split('-')[0] === candidate) {
+                    chosen = localeMap[code];
+                    break outer;
+                  }
+                }
+              }
+            }
+          }
+        } catch {
+          chosen = defaultTarget;
+        }
+        window.location.replace(chosen);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href={defaultTarget}>LinMBC</a>
+    </p>
+  </body>
+</html>

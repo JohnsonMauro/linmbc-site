@@ -1,0 +1,25 @@
+---
+import type { Dict } from '../i18n/dict';
+
+interface Props {
+  dict: Dict;
+}
+
+const { dict } = Astro.props;
+---
+
+<section class="border-t border-line bg-surface/60" aria-labelledby="safety-title">
+  <div class="mx-auto max-w-page px-4 py-24 sm:px-6">
+    <h2 id="safety-title" class="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
+      {dict.safety.title}
+    </h2>
+    <ul class="mt-10 grid gap-6 md:grid-cols-3">
+      {dict.safety.items.map((item) => (
+        <li class="border-l-2 border-gold/60 pl-5">
+          <h3 class="font-display text-lg font-bold">{item.title}</h3>
+          <p class="mt-2 leading-relaxed text-ink-muted">{item.body}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

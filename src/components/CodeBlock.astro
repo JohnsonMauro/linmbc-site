@@ -1,0 +1,50 @@
+---
+interface Props {
+  lines: string[];
+  copy: string;
+  copied: string;
+}
+
+const { lines, copy, copied } = Astro.props;
+---
+
+<div class="overflow-hidden rounded-xl border border-line bg-night font-mono text-sm">
+  <div class="flex items-center gap-1.5 border-b border-line bg-surface px-4 py-2">
+    <span class="size-2.5 rounded-full bg-line" aria-hidden="true"></span>
+    <span class="size-2.5 rounded-full bg-line" aria-hidden="true"></span>
+    <span class="size-2.5 rounded-full bg-line" aria-hidden="true"></span>
+    <button
+      type="button"
+      class="ml-auto rounded-md px-2.5 py-1 font-sans text-xs text-ink-muted transition-colors hover:bg-line hover:text-ink focus-visible:outline-2 focus-visible:outline-gold"
+      data-copy={lines.join('\n')}
+      data-copied={copied}
+    >
+      {copy}
+    </button>
+  </div>
+  {/* Lines as blocks, not a <pre>: template line breaks inside <pre> would render.
+      No ligatures: "--user" must read as two hyphens. */}
+  <div class="overflow-x-auto px-5 py-4 leading-7 [font-variant-ligatures:none]">
+    {lines.map((line) => (
+      <code class="block whitespace-pre">
+        <span class="text-ink-faint select-none">{'$ '}</span>
+        {line}
+      </code>
+    ))}
+  </div>
+</div>
+
+<script>
+  for (const button of document.querySelectorAll<HTMLButtonElement>('button[data-copy]')) {
+    const label = button.textContent;
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.copy ?? '');
+        button.textContent = button.dataset.copied ?? label;
+        setTimeout(() => (button.textContent = label), 1600);
+      } catch {
+        /* clipboard blocked: the text stays selectable */
+      }
+    });
+  }
+</script>

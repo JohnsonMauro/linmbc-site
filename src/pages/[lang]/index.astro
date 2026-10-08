@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import Install from '../../components/Install.astro';
+import Support from '../../components/Support.astro';
+import Safety from '../../components/Safety.astro';
+import Footer from '../../components/Footer.astro';
+import { LOCALES, SCREENSHOT_SUFFIX, isLocale } from '../../i18n/config';
+import { getDict } from '../../i18n/content';
+
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+if (!isLocale(lang)) {
+  throw new Error(`Unsupported locale: ${lang}`);
+}
+const dict = getDict(lang);
+---
+
+<Base
+  lang={lang}
+  title={dict.meta.title}
+  description={dict.meta.description}
+  keywords={dict.meta.keywords}
+>
+  <Header lang={lang} dict={dict} />
+  <main id="main">
+    <Hero dict={dict} shot={SCREENSHOT_SUFFIX[lang]} />
+    <Features dict={dict} />
+    <HowItWorks dict={dict} />
+    <Install dict={dict} />
+    <Support dict={dict} />
+    <Safety dict={dict} />
+  </main>
+  <Footer dict={dict} />
+</Base>
