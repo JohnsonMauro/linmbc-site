@@ -24,6 +24,14 @@ const fr: Dict = {
     ctaInstall: 'Installer',
     ctaSource: 'Voir sur GitHub',
     note: 'Libre et open source · MIT · Wayland d’abord',
+    pause: 'Mettre l’animation en pause',
+    play: 'Reprendre l’animation',
+    eggTip: 'Une souris avec boutons latéraux ? Appuyez sur l’un d’eux ici.',
+    eggRear: 'Latéral arrière → Q',
+    eggFront: 'Latéral avant → Ctrl+2 · Boucle jusqu’au clic suivant',
+    eggFrontOff: 'Latéral avant → boucle arrêtée',
+    eggHint:
+      'LinMBC : en haut de la page, cliquez n’importe où ou appuyez sur les boutons latéraux de la souris (l’arrière envoie Q, l’avant répète Ctrl+2 en boucle).',
   },
   screens: {
     mainAlt:

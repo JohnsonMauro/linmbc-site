@@ -24,6 +24,14 @@ const pl: Dict = {
     ctaInstall: 'Zainstaluj',
     ctaSource: 'Zobacz na GitHubie',
     note: 'Wolne i otwarte · MIT · najpierw Wayland',
+    pause: 'Wstrzymaj animację',
+    play: 'Wznów animację',
+    eggTip: 'Mysz z bocznymi przyciskami? Naciśnij jeden tutaj, na górze.',
+    eggRear: 'Boczny tylny → Q',
+    eggFront: 'Boczny przedni → Ctrl+2 · Pętla do ponownego kliknięcia',
+    eggFrontOff: 'Boczny przedni → pętla zatrzymana',
+    eggHint:
+      'LinMBC: u góry strony kliknij w dowolnym miejscu albo naciśnij boczne przyciski myszy (tylny wysyła Q, przedni powtarza Ctrl+2 w pętli).',
   },
   screens: {
     mainAlt:

@@ -30,6 +30,17 @@ export interface Dict {
     ctaInstall: string;
     ctaSource: string;
     note: string;
+    /** Pause control of the backdrop animation (WCAG 2.2.2). */
+    pause: string;
+    play: string;
+    /** Visible invitation to the side-button easter egg (fine pointers only). */
+    eggTip: string;
+    /** Feedback when a side button is pressed over the hero; button names as in the app. */
+    eggRear: string;
+    eggFront: string;
+    eggFrontOff: string;
+    /** Console hint, for whoever opens DevTools. */
+    eggHint: string;
   };
   screens: {
     mainAlt: string;

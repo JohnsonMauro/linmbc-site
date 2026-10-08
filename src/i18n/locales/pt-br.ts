@@ -24,6 +24,14 @@ const ptBr: Dict = {
     ctaInstall: 'Instalar',
     ctaSource: 'Ver no GitHub',
     note: 'Livre e de código aberto · MIT · Wayland primeiro',
+    pause: 'Pausar animação',
+    play: 'Continuar animação',
+    eggTip: 'Mouse com botões laterais? Aperte um aqui em cima.',
+    eggRear: 'Lateral de trás → Q',
+    eggFront: 'Lateral da frente → Ctrl+2 · Loop até clicar de novo',
+    eggFrontOff: 'Lateral da frente → loop parado',
+    eggHint:
+      'LinMBC: no topo da página, clique em qualquer lugar ou aperte os botões laterais do mouse (o de trás manda Q, o da frente repete Ctrl+2 em loop).',
   },
   screens: {
     mainAlt:

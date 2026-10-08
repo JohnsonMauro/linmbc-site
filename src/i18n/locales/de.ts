@@ -24,6 +24,14 @@ const de: Dict = {
     ctaInstall: 'Installieren',
     ctaSource: 'Auf GitHub ansehen',
     note: 'Frei und quelloffen · MIT · Wayland zuerst',
+    pause: 'Animation anhalten',
+    play: 'Animation fortsetzen',
+    eggTip: 'Maus mit Seitentasten? Drück hier oben eine.',
+    eggRear: 'Seite hinten → Q',
+    eggFront: 'Seite vorne → Ctrl+2 · Schleife bis zum nächsten Klick',
+    eggFrontOff: 'Seite vorne → Schleife gestoppt',
+    eggHint:
+      'LinMBC: Klicke oben auf der Seite irgendwohin oder drücke die Seitentasten deiner Maus (hinten sendet Q, vorne wiederholt Ctrl+2 in Schleife).',
   },
   screens: {
     mainAlt:

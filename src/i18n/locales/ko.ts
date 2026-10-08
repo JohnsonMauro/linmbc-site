@@ -24,6 +24,14 @@ const ko: Dict = {
     ctaInstall: '설치',
     ctaSource: 'GitHub에서 보기',
     note: '무료 오픈 소스 · MIT · Wayland 우선',
+    pause: '애니메이션 일시 정지',
+    play: '애니메이션 재생',
+    eggTip: '측면 버튼이 있는 마우스라면 여기서 눌러 보세요.',
+    eggRear: '측면 뒤쪽 → Q',
+    eggFront: '측면 앞쪽 → Ctrl+2 · 다시 클릭할 때까지 반복',
+    eggFrontOff: '측면 앞쪽 → 반복 중지',
+    eggHint:
+      'LinMBC: 페이지 위쪽 아무 곳이나 클릭하거나 마우스 측면 버튼을 눌러 보세요(뒤쪽은 Q, 앞쪽은 Ctrl+2 반복).',
   },
   screens: {
     mainAlt:

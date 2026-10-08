@@ -68,3 +68,72 @@ html {
   }
   /* eslint-enable css/no-important */
 }
+
+/*
+ * Hero backdrop (components/Hero.astro, src/backdrop/). Each canvas stays
+ * invisible until its module sets data-ready (first frame drawn); the CSS glow
+ * under them is the fallback without WebGL.
+ */
+.backdrop-layer {
+  opacity: 0;
+  transition: opacity 1.2s ease-out;
+}
+
+.backdrop-layer[data-ready] {
+  opacity: 1;
+}
+
+/*
+ * Leaving the hero: the copy sinks and fades while the backdrop drifts slower,
+ * driven by the scrollbar. Progressive enhancement: without scroll-driven
+ * animations (or with reduced motion) the page scrolls plainly.
+ *
+ * Longhands on purpose: lightningcss (Vite's CSS minifier) folds `animation` +
+ * `animation-timeline` into an invalid shorthand and the build drops it.
+ * `exit-crossing` and a zero inset: the hero is shorter than the window and the
+ * page has a scroll-padding-top, either of which would start the exit before
+ * any scrolling.
+ */
+/* eslint-disable css/use-baseline -- progressive enhancement, guarded by the
+   @supports below: browsers without scroll-driven animations skip the block. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .hero {
+      view-timeline-name: --hero;
+      view-timeline-axis: block;
+      view-timeline-inset: 0;
+    }
+
+    .hero-copy,
+    .hero-backdrop {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --hero;
+    }
+
+    .hero-copy {
+      animation-name: hero-copy-exit;
+      animation-range: exit-crossing 0% exit-crossing 70%;
+    }
+
+    .hero-backdrop {
+      animation-name: hero-backdrop-exit;
+      animation-range: exit-crossing 0% exit-crossing 100%;
+    }
+  }
+}
+/* eslint-enable css/use-baseline */
+
+@keyframes hero-copy-exit {
+  to {
+    transform: translateY(18vh) scale(0.96);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-backdrop-exit {
+  to {
+    transform: translateY(30%);
+    opacity: 0.35;
+  }
+}

@@ -23,6 +23,14 @@ const en: Dict = {
     ctaInstall: 'Install',
     ctaSource: 'View on GitHub',
     note: 'Free and open source · MIT · Wayland first',
+    pause: 'Pause animation',
+    play: 'Play animation',
+    eggTip: 'Mouse with side buttons? Press one up here.',
+    eggRear: 'Side — rear → Q',
+    eggFront: 'Side — front → Ctrl+2 · Loop until clicked again',
+    eggFrontOff: 'Side — front → loop stopped',
+    eggHint:
+      'LinMBC: over the top of the page, click anywhere, or press your mouse side buttons (rear sends Q, front loops Ctrl+2).',
   },
   screens: {
     mainAlt:

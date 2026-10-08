@@ -24,6 +24,14 @@ const es: Dict = {
     ctaInstall: 'Instalar',
     ctaSource: 'Ver en GitHub',
     note: 'Libre y de código abierto · MIT · Wayland primero',
+    pause: 'Pausar animación',
+    play: 'Reanudar animación',
+    eggTip: '¿Ratón con botones laterales? Pulsa uno aquí arriba.',
+    eggRear: 'Lateral trasero → Q',
+    eggFront: 'Lateral delantero → Ctrl+2 · Repetir hasta volver a hacer clic',
+    eggFrontOff: 'Lateral delantero → bucle detenido',
+    eggHint:
+      'LinMBC: en la parte superior de la página, haz clic en cualquier sitio o pulsa los botones laterales del ratón (el trasero envía Q, el delantero repite Ctrl+2 en bucle).',
   },
   screens: {
     mainAlt:

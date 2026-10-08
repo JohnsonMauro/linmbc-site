@@ -24,6 +24,14 @@ const ja: Dict = {
     ctaInstall: 'インストール',
     ctaSource: 'GitHub で見る',
     note: '無料のオープンソース · MIT · Wayland 優先',
+    pause: 'アニメーションを一時停止',
+    play: 'アニメーションを再生',
+    eggTip: 'サイドボタン付きのマウスなら、ここで押してみてください。',
+    eggRear: 'サイド（後ろ） → Q',
+    eggFront: 'サイド（前） → Ctrl+2 · もう一度クリックするまでループ',
+    eggFrontOff: 'サイド（前） → ループ停止',
+    eggHint:
+      'LinMBC：ページ上部のどこかをクリックするか、マウスのサイドボタンを押してみてください（後ろは Q、前は Ctrl+2 をループ）。',
   },
   screens: {
     mainAlt:
