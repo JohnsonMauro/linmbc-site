@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // Astro's strict preset: ESNext + bundler resolution, verbatimModuleSyntax,
+  // noEmit, strict, and include/exclude for the whole project and .astro types.
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": false,
+    "noUncheckedSideEffectImports": true,
+    // scripts/*.mjs import the locale .ts files through Node's type stripping,
+    // which only handles syntax that can be erased.
+    "erasableSyntaxOnly": true
+  }
+}

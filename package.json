@@ -1,0 +1,50 @@
+{
+  "name": "linmbc-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=24.16.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "copy:check": "node scripts/copy-check.mjs",
+    "favicons": "node scripts/gen-favicons.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "og:images": "node scripts/gen-og-images.mjs",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "^7.3.4",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/css": "^2.0.0",
+    "@eslint/js": "^10.0.1",
+    "astro-eslint-parser": "^3.1.0",
+    "eslint": "^10.11.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "eslint-plugin-jsx-a11y-x": "^0.2.0",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "sharp": "^0.35.4",
+    "tailwind-csstree": "^0.4.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1"
+  }
+}
