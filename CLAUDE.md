@@ -40,7 +40,7 @@ Adapted from the portfolio's hero (same tide shader and frame loop). Mice and
 keycaps drift in three depth layers; gold signals travel mouse → key and light
 the key: a remap, drawn. The visitor joins in: a click sends signals to the
 nearest keys, the rear side button sends Q, the front one toggles a Ctrl+2
-loop (the screenshots' Last Epoch profile), with a toast in the page language.
+loop (the screenshots' game profile), with a toast in the page language.
 
 - Colours come from the theme tokens (`--color-*`, plain hex in the built CSS);
   the tide tones them into the night with `mix()` — full strength washed the

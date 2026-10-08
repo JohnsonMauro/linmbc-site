@@ -35,7 +35,7 @@ const pl: Dict = {
   },
   screens: {
     mainAlt:
-      'Główne okno LinMBC: profil Last Epoch, tylny przycisk boczny wysyła Q, a przedni powtarza Ctrl+2 w pętli.',
+      'Główne okno LinMBC: profil Gra A, tylny przycisk boczny wysyła Q, a przedni powtarza Ctrl+2 w pętli.',
     mappingAlt:
       'Ustawienia przycisku: klawisze Ctrl+2, pętla do następnego kliknięcia, losowe opóźnienie od 80 do 140 ms.',
     mappingCaption: 'Dla każdego przycisku: klawisze, sposób ich wysyłania i opóźnienie.',

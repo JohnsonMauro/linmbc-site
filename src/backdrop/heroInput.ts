@@ -3,7 +3,7 @@ import type { SignalNetwork } from './signalNetwork';
 /** MouseEvent.button for the side buttons (the browser's Back and Forward). */
 const REAR = 3;
 const FRONT = 4;
-/** The front button's loop, as in the screenshots' Last Epoch profile. */
+/** The front button's loop, as in the screenshots' game profile. */
 const LOOP_LABELS = ['Ctrl', '2'];
 const LOOP_EVERY_MS = 420;
 /** A forgotten loop stops by itself (and keeps the animation rule of thumb). */

@@ -35,7 +35,7 @@ const de: Dict = {
   },
   screens: {
     mainAlt:
-      'LinMBC-Hauptfenster: das Profil für Last Epoch – die hintere Seitentaste sendet Q, die vordere wiederholt Ctrl+2 in Schleife.',
+      'LinMBC-Hauptfenster: das Profil für Spiel A – die hintere Seitentaste sendet Q, die vordere wiederholt Ctrl+2 in Schleife.',
     mappingAlt:
       'Tasteneinstellung: Tasten Ctrl+2, Schleife bis zum nächsten Klick, zufällige Verzögerung zwischen 80 und 140 ms.',
     mappingCaption: 'Pro Taste: die Tasten, wie ein Klick sie sendet, und die Verzögerung.',

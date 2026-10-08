@@ -35,7 +35,7 @@ const ko: Dict = {
   },
   screens: {
     mainAlt:
-      'LinMBC 기본 창: Last Epoch 프로필에서 뒤쪽 측면 버튼은 Q를, 앞쪽 측면 버튼은 Ctrl+2를 반복 전송합니다.',
+      'LinMBC 기본 창: 게임 A 프로필에서 뒤쪽 측면 버튼은 Q를, 앞쪽 측면 버튼은 Ctrl+2를 반복 전송합니다.',
     mappingAlt: '버튼 설정: 키 Ctrl+2, 다시 클릭할 때까지 반복, 80~140 ms 사이의 무작위 지연.',
     mappingCaption: '버튼마다: 보낼 키, 클릭 시 보내는 방식, 지연.',
   },

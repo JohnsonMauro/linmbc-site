@@ -35,7 +35,7 @@ const fr: Dict = {
   },
   screens: {
     mainAlt:
-      'Fenêtre principale de LinMBC : le profil Last Epoch, le bouton latéral arrière envoie Q et l’avant répète Ctrl+2 en boucle.',
+      'Fenêtre principale de LinMBC : le profil Jeu A, le bouton latéral arrière envoie Q et l’avant répète Ctrl+2 en boucle.',
     mappingAlt:
       'Réglages du bouton : touches Ctrl+2, boucle jusqu’au prochain clic, délai aléatoire entre 80 et 140 ms.',
     mappingCaption:

@@ -34,7 +34,7 @@ const en: Dict = {
   },
   screens: {
     mainAlt:
-      'LinMBC main window: the Last Epoch profile, with the rear side button sending Q and the front side button looping Ctrl+2.',
+      'LinMBC main window: the Game A profile, with the rear side button sending Q and the front side button looping Ctrl+2.',
     mappingAlt:
       'Button settings: keys Ctrl+2, loop until clicked again, random delay between 80 and 140 ms.',
     mappingCaption: 'Each button: keys, how a click sends them, and the delay.',

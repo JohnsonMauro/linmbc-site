@@ -35,7 +35,7 @@ const es: Dict = {
   },
   screens: {
     mainAlt:
-      'Ventana principal de LinMBC: el perfil de Last Epoch, con el botón lateral trasero enviando Q y el delantero repitiendo Ctrl+2 en bucle.',
+      'Ventana principal de LinMBC: el perfil de Juego A, con el botón lateral trasero enviando Q y el delantero repitiendo Ctrl+2 en bucle.',
     mappingAlt:
       'Ajustes del botón: teclas Ctrl+2, bucle hasta volver a pulsar, retardo aleatorio entre 80 y 140 ms.',
     mappingCaption: 'Cada botón: las teclas, cómo las envía un clic y el retardo.',

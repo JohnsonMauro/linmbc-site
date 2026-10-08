@@ -34,7 +34,7 @@ const zhCn: Dict = {
       'LinMBC：在页面顶部任意位置点击，或按下鼠标侧键（后侧键发送 Q，前侧键循环发送 Ctrl+2）。',
   },
   screens: {
-    mainAlt: 'LinMBC 主窗口：Last Epoch 的配置，后侧键发送 Q，前侧键循环发送 Ctrl+2。',
+    mainAlt: 'LinMBC 主窗口：游戏 A 的配置，后侧键发送 Q，前侧键循环发送 Ctrl+2。',
     mappingAlt: '按键设置：按键 Ctrl+2，循环直到再次点击，随机延迟 80–140 ms。',
     mappingCaption: '每个按键：发送的按键、点击时的发送方式，以及延迟。',
   },

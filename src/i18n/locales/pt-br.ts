@@ -35,7 +35,7 @@ const ptBr: Dict = {
   },
   screens: {
     mainAlt:
-      'Janela principal do LinMBC: perfil do Last Epoch, com o botão lateral de trás enviando Q e o da frente repetindo Ctrl+2 em loop.',
+      'Janela principal do LinMBC: perfil do Jogo A, com o botão lateral de trás enviando Q e o da frente repetindo Ctrl+2 em loop.',
     mappingAlt:
       'Configuração do botão: teclas Ctrl+2, loop até clicar de novo, delay aleatório entre 80 e 140 ms.',
     mappingCaption: 'Cada botão: as teclas, como o clique as envia e o delay.',
