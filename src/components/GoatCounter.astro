@@ -1,0 +1,12 @@
+---
+// Cookieless page-view counter (goatcounter.com, site "linmbc"; private
+// dashboard). Production builds only; count.js also skips localhost and
+// private IPs, so `pnpm preview` sends no hits. Not on the root redirect page,
+// or every visit would count twice.
+const GOATCOUNTER_ENDPOINT = 'https://linmbc.goatcounter.com/count';
+const GOATCOUNTER_SCRIPT = 'https://gc.zgo.at/count.js';
+---
+
+{import.meta.env.PROD && (
+  <script is:inline data-goatcounter={GOATCOUNTER_ENDPOINT} async src={GOATCOUNTER_SCRIPT} />
+)}

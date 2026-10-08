@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import { LOCALES, DEFAULT_LOCALE, HREFLANG_TAGS, OG_LOCALES, type Locale } from '../i18n/config';
 import { asset } from '../lib/asset';
+import GoatCounter from '../components/GoatCounter.astro';
 
 interface Props {
   lang: Locale;
@@ -63,6 +64,7 @@ const ogImage = new URL(asset(`img/og-${lang}.png`), Astro.site).href;
     <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
+    <GoatCounter />
   </head>
   <body class="bg-night font-sans text-ink antialiased [word-break:auto-phrase]">
     <slot />

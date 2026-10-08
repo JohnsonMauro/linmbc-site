@@ -39,6 +39,15 @@ pnpm lint && pnpm format:check && pnpm check && pnpm copy:check && pnpm build
 | Link cards (`public/img/og-*.png`) | `CHROME_PATH=brave pnpm og:images` (needs network for the web fonts) |
 | Favicons | `pnpm favicons` (from `public/favicon.svg`, the app's logo) |
 
+## Analytics
+
+Page views are counted with [GoatCounter](https://www.goatcounter.com)
+(cookieless, no consent banner needed), site `linmbc` — private dashboard at
+[linmbc.goatcounter.com](https://linmbc.goatcounter.com/). The snippet lives in
+[`src/components/GoatCounter.astro`](src/components/GoatCounter.astro) and is
+only rendered in production builds; the root redirect page has no counter, so
+a visit is counted once.
+
 ## License
 
 [MIT](LICENSE). Flag icons from [flag-icons](https://github.com/lipis/flag-icons)
