@@ -68,6 +68,11 @@ const ptBr: Dict = {
         body: 'Todo mouse é reconhecido automaticamente, vários ao mesmo tempo, inclusive um receptor desconectado e conectado de novo.',
       },
     ],
+    switches: {
+      game: 'Jogo A',
+      otherGame: 'Jogo B',
+      defaultProfile: 'Padrão',
+    },
   },
   how: {
     title: 'Como funciona',

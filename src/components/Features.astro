@@ -23,11 +23,13 @@ const ICONS = [
   'M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0V8zM12 16v5',
 ];
 
-// Focused window → active profile, as the app's status line shows it.
+// Focused window → active profile, as the app's status line shows it. Generic
+// on purpose: window classes without real app ids, profile names from the dictionary.
+const switches = dict.features.switches;
 const SWITCHES = [
-  ['steam_app_899770', 'Last Epoch'],
-  ['steam_app_2694490', 'Path of Exile 2'],
-  ['firefox', 'Default'],
+  ['steam_app_…', switches.game],
+  ['steam_app_…', switches.otherGame],
+  ['firefox', switches.defaultProfile],
 ];
 ---
 

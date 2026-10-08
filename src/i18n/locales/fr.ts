@@ -69,6 +69,11 @@ const fr: Dict = {
         body: 'Chaque souris est prise en charge automatiquement, plusieurs à la fois, y compris un récepteur débranché puis rebranché.',
       },
     ],
+    switches: {
+      game: 'Jeu A',
+      otherGame: 'Jeu B',
+      defaultProfile: 'Par défaut',
+    },
   },
   how: {
     title: 'Comment ça marche',

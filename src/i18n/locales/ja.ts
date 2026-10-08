@@ -68,6 +68,11 @@ const ja: Dict = {
         body: 'どのマウスも自動で認識。複数台の同時接続や、レシーバーの抜き差しにも対応します。',
       },
     ],
+    switches: {
+      game: 'ゲーム A',
+      otherGame: 'ゲーム B',
+      defaultProfile: '既定',
+    },
   },
   how: {
     title: '仕組み',

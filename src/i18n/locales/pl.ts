@@ -68,6 +68,11 @@ const pl: Dict = {
         body: 'Każda mysz jest wykrywana automatycznie, kilka naraz, również odbiornik odłączony i podłączony ponownie.',
       },
     ],
+    switches: {
+      game: 'Gra A',
+      otherGame: 'Gra B',
+      defaultProfile: 'Domyślny',
+    },
   },
   how: {
     title: 'Jak to działa',

@@ -50,6 +50,12 @@ export interface Dict {
   features: {
     title: string;
     items: Item[];
+    /** Profile names in the first card's window → profile example; default as the app names it. */
+    switches: {
+      game: string;
+      otherGame: string;
+      defaultProfile: string;
+    };
   };
   how: {
     title: string;

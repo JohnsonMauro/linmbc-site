@@ -68,6 +68,11 @@ const es: Dict = {
         body: 'Cualquier ratón se detecta automáticamente, varios a la vez, incluido un receptor desconectado y vuelto a conectar.',
       },
     ],
+    switches: {
+      game: 'Juego A',
+      otherGame: 'Juego B',
+      defaultProfile: 'Predeterminado',
+    },
   },
   how: {
     title: 'Cómo funciona',

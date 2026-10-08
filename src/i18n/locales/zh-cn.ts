@@ -66,6 +66,11 @@ const zhCn: Dict = {
         body: '任何鼠标都会被自动识别，可同时使用多个，接收器拔出再插入也没问题。',
       },
     ],
+    switches: {
+      game: '游戏 A',
+      otherGame: '游戏 B',
+      defaultProfile: '默认',
+    },
   },
   how: {
     title: '工作原理',

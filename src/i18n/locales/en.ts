@@ -67,6 +67,11 @@ const en: Dict = {
         body: 'Any mouse is picked up automatically, several at once, including a receiver unplugged and plugged back.',
       },
     ],
+    switches: {
+      game: 'Game A',
+      otherGame: 'Game B',
+      defaultProfile: 'Default',
+    },
   },
   how: {
     title: 'How it works',

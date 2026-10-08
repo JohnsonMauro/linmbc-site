@@ -67,6 +67,11 @@ const ko: Dict = {
         body: '모든 마우스를 자동으로 인식합니다. 여러 대를 동시에, 리시버를 뺐다 다시 꽂아도 됩니다.',
       },
     ],
+    switches: {
+      game: '게임 A',
+      otherGame: '게임 B',
+      defaultProfile: '기본',
+    },
   },
   how: {
     title: '작동 방식',

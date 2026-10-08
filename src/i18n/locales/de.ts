@@ -68,6 +68,11 @@ const de: Dict = {
         body: 'Jede Maus wird automatisch erkannt, auch mehrere gleichzeitig und ein abgezogener und wieder eingesteckter Empfänger.',
       },
     ],
+    switches: {
+      game: 'Spiel A',
+      otherGame: 'Spiel B',
+      defaultProfile: 'Standard',
+    },
   },
   how: {
     title: 'So funktioniert es',
